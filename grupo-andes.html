@@ -1,7 +1,327 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Grupo Andes real estate commercial analytics case study, featuring Power BI dashboard architecture and business analysis methodology."><title>Grupo Andes | Real Estate Analytics — Jasmanik Torres López</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="header"><nav class="nav container" aria-label="Main navigation"><a class="brand" href="index.html#home"><span class="monogram">JT</span><span>Jasmanik Torres López<small>Data Analyst · Engineer</small></span></a><button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Toggle color theme">☀</button><a class="nav-github" href="index.html#projects">← All Projects</a></nav></header>
-<main><section class="container case-hero"><a class="case-back" href="index.html#projects">← Back to projects</a><p class="eyebrow">DATA ANALYTICS · EDUCATIONAL CASE STUDY</p><h1>Grupo Andes: Real Estate Commercial Analytics</h1><p class="case-lead">A Power BI business intelligence project to examine property sales, revenue performance, customer segments, sales channels, and repeat-purchase patterns.</p><div class="tags"><span>Power BI</span><span>DAX</span><span>Star Schema</span><span>Business KPIs</span><span>Cohort Analysis</span></div><div class="case-note" style="margin-top:24px"><strong>Public portfolio version</strong><p>This page describes the analytical methodology and dashboard design. The original Power BI report, notebook, datasets, report screenshots, and project-specific numerical findings are not distributed because publication permissions have not been confirmed. The cover image is a conceptual illustration.</p></div></section>
-<section class="container case-section"><h2>Business challenge</h2><p>How can a real estate business evaluate its commercial performance across property types, cities, channels, and customer segments while identifying patterns in repeat purchases?</p><h2>Analytical approach</h2><div class="safe-steps"><article><span>01</span><h3>Data preparation</h3><p>Review transaction, customer, property, and channel fields for completeness, consistency, and appropriate data types.</p></article><article><span>02</span><h3>Dimensional modeling</h3><p>Organize property sales as a fact table linked to customer, property, channel, and date dimensions using a star-schema approach.</p></article><article><span>03</span><h3>Business measures</h3><p>Define revenue, property sales, average transaction value, commissions, and year-over-year growth measures in Power BI.</p></article><article><span>04</span><h3>Segmentation and retention</h3><p>Compare sales by city, property type, acquisition channel, and customer segment; examine subsequent purchases through cohort analysis.</p></article><article><span>05</span><h3>Dashboard storytelling</h3><p>Build a multi-page report that connects executive KPIs with segment-level comparisons and customer retention patterns.</p></article></div></section>
-<section class="container case-section"><h2>Dashboard structure</h2><p>The project documentation specifies three complementary analytical views. The illustrations below are schematic and do not reproduce the underlying report.</p><div class="safe-dashboard-grid"><article class="safe-dashboard"><div class="safe-dashboard-art"><span>01 / OVERVIEW</span><div class="safe-skeleton"><i></i><i></i><i></i></div></div><h3>Executive overview</h3><p>Revenue, property sales, average transaction value, commissions, and year-over-year comparisons.</p></article><article class="safe-dashboard"><div class="safe-dashboard-art"><span>02 / SEGMENTS</span><div class="safe-skeleton"><i></i><i></i><i></i></div></div><h3>Commercial segmentation</h3><p>Performance by city, property type, customer segment, and sales channel.</p></article><article class="safe-dashboard"><div class="safe-dashboard-art"><span>03 / RETENTION</span><div class="safe-skeleton"><i></i><i></i><i></i></div></div><h3>Customer retention</h3><p>Cohort-based examination of repeat transactions over time.</p></article></div></section>
-<section class="container case-section"><h2>Business insights and decisions</h2><p>The analysis was designed to support differentiated commercial strategies rather than evaluating sales using a single aggregate measure.</p><ul><li>Compare property categories by both transaction volume and average transaction value.</li><li>Assess geographic concentration of revenue and the contribution of each sales channel.</li><li>Distinguish first-time customers from returning buyers when planning retention initiatives.</li><li>Use year-over-year comparisons alongside monthly patterns to understand growth and variability.</li><li>Translate dashboard findings into channel, product mix, and customer relationship recommendations.</li></ul><div class="case-note"><strong>Disclosure</strong><p>The analytical themes are based on the project's notebook. Exact business figures and original dashboard visuals have been intentionally omitted from this public-facing version.</p></div></section>
-<section class="container case-section"><h2>Skills demonstrated</h2><div class="tags"><span>Data validation</span><span>Dimensional modeling</span><span>DAX</span><span>Power BI</span><span>Time intelligence</span><span>Segmentation</span><span>Cohort analysis</span><span>Business recommendations</span></div><div class="case-links" style="margin-top:24px"><a class="btn primary" href="index.html#projects">Explore more projects →</a><a class="btn secondary" href="mailto:jasmanik.t.l.96@gmail.com">Contact me</a></div></section></main><footer class="footer container"><span>© <span id="year"></span> Jasmanik Torres López</span><span>Data Analytics · Robotics &amp; AI</span></footer><script src="script.js"></script></body></html>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Grupo Andes real estate business analytics case study by Jasmanik Torres López. Power BI, DAX, dimensional modeling, commercial KPIs, customer segmentation, and cohort analysis.">
+
+  <title>Grupo Andes | Real Estate Analytics — Jasmanik Torres López</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <nav class="nav container" aria-label="Main navigation">
+
+    <a class="brand" href="index.html#home">
+      <span class="monogram">JT</span>
+      <span>
+        Jasmanik Torres López
+        <small>Data Analyst · Engineer</small>
+      </span>
+    </a>
+
+    <button class="theme-toggle"
+            type="button"
+            aria-label="Switch to light mode"
+            title="Toggle color theme">☀</button>
+
+    <a class="nav-github" href="index.html#projects">
+      ← All Projects
+    </a>
+
+  </nav>
+</header>
+
+<main>
+
+  <section class="container case-hero">
+
+    <a class="case-back" href="index.html#projects">
+      ← Back to projects
+    </a>
+
+    <p class="eyebrow">
+      DATA ANALYTICS · EDUCATIONAL CASE STUDY
+    </p>
+
+    <h1>Grupo Andes: Real Estate Commercial Analytics</h1>
+
+    <p class="case-lead">
+      A Power BI business intelligence project to examine property sales,
+      revenue performance, customer segments, sales channels,
+      and repeat-purchase patterns.
+    </p>
+
+    <div class="tags">
+      <span>Power BI</span>
+      <span>DAX</span>
+      <span>Star Schema</span>
+      <span>Business KPIs</span>
+      <span>Cohort Analysis</span>
+    </div>
+
+    <div class="case-note" style="margin-top:24px">
+      <strong>Public portfolio version</strong>
+
+      <p>
+        This case study presents the analytical methodology,
+        business questions, dimensional model, and Power BI
+        dashboard architecture. The project documentation
+        is publicly available on GitHub. Original datasets,
+        Power BI files, and report screenshots are not included
+        in the public repository. The cover image is a
+        conceptual illustration.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="container case-section">
+
+    <h2>Business challenge</h2>
+
+    <p>
+      How can a real estate business evaluate its commercial
+      performance across property types, cities, channels,
+      and customer segments while identifying patterns
+      in repeat purchases?
+    </p>
+
+    <h2>Analytical approach</h2>
+
+    <div class="safe-steps">
+
+      <article>
+        <span>01</span>
+        <h3>Data preparation</h3>
+        <p>
+          Review transaction, customer, property, and channel
+          fields for completeness, consistency,
+          and appropriate data types.
+        </p>
+      </article>
+
+      <article>
+        <span>02</span>
+        <h3>Dimensional modeling</h3>
+        <p>
+          Organize property sales as a fact table linked
+          to customer, property, channel, and date dimensions
+          using a star-schema approach.
+        </p>
+      </article>
+
+      <article>
+        <span>03</span>
+        <h3>Business measures</h3>
+        <p>
+          Define revenue, property sales, average transaction
+          value, commissions, and year-over-year growth
+          measures in Power BI.
+        </p>
+      </article>
+
+      <article>
+        <span>04</span>
+        <h3>Segmentation and retention</h3>
+        <p>
+          Compare sales by city, property type, acquisition
+          channel, and customer segment; examine subsequent
+          purchases through cohort analysis.
+        </p>
+      </article>
+
+      <article>
+        <span>05</span>
+        <h3>Dashboard storytelling</h3>
+        <p>
+          Build a multi-page report that connects executive
+          KPIs with segment-level comparisons and customer
+          retention patterns.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="container case-section">
+
+    <h2>Dashboard structure</h2>
+
+    <p>
+      The project documentation specifies three complementary
+      analytical views. The illustrations below are schematic
+      and do not reproduce the underlying report.
+    </p>
+
+    <div class="safe-dashboard-grid">
+
+      <article class="safe-dashboard">
+
+        <div class="safe-dashboard-art">
+          <span>01 / OVERVIEW</span>
+          <div class="safe-skeleton">
+            <i></i><i></i><i></i>
+          </div>
+        </div>
+
+        <h3>Executive overview</h3>
+
+        <p>
+          Revenue, property sales, average transaction value,
+          commissions, and year-over-year comparisons.
+        </p>
+
+      </article>
+
+      <article class="safe-dashboard">
+
+        <div class="safe-dashboard-art">
+          <span>02 / SEGMENTS</span>
+          <div class="safe-skeleton">
+            <i></i><i></i><i></i>
+          </div>
+        </div>
+
+        <h3>Commercial segmentation</h3>
+
+        <p>
+          Performance by city, property type,
+          customer segment, and sales channel.
+        </p>
+
+      </article>
+
+      <article class="safe-dashboard">
+
+        <div class="safe-dashboard-art">
+          <span>03 / RETENTION</span>
+          <div class="safe-skeleton">
+            <i></i><i></i><i></i>
+          </div>
+        </div>
+
+        <h3>Customer retention</h3>
+
+        <p>
+          Cohort-based examination of repeat transactions
+          over time.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="container case-section">
+
+    <h2>Business insights and decisions</h2>
+
+    <p>
+      The analysis was designed to support differentiated
+      commercial strategies rather than evaluating sales
+      using a single aggregate measure.
+    </p>
+
+    <ul>
+      <li>
+        Compare property categories by both transaction
+        volume and average transaction value.
+      </li>
+
+      <li>
+        Assess geographic concentration of revenue
+        and the contribution of each sales channel.
+      </li>
+
+      <li>
+        Distinguish first-time customers from returning
+        buyers when planning retention initiatives.
+      </li>
+
+      <li>
+        Use year-over-year comparisons alongside monthly
+        patterns to understand growth and variability.
+      </li>
+
+      <li>
+        Translate dashboard findings into channel,
+        product mix, and customer relationship recommendations.
+      </li>
+    </ul>
+
+    <div class="case-note">
+
+      <strong>Disclosure</strong>
+
+      <p>
+        The project documentation is available in the public
+        GitHub repository. Original business datasets,
+        Power BI files, and dashboard screenshots
+        are not distributed. The case study focuses
+        on methodology and analytical interpretation.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="container case-section">
+
+    <h2>Skills demonstrated</h2>
+
+    <div class="tags">
+      <span>Data validation</span>
+      <span>Dimensional modeling</span>
+      <span>DAX</span>
+      <span>Power BI</span>
+      <span>Time intelligence</span>
+      <span>Segmentation</span>
+      <span>Cohort analysis</span>
+      <span>Business recommendations</span>
+    </div>
+
+    <div class="case-links" style="margin-top:24px">
+
+      <a class="btn primary"
+         href="https://github.com/JasmanikTL/grupo-andes-real-estate-analytics"
+         target="_blank"
+         rel="noopener noreferrer">
+        View Project on GitHub →
+      </a>
+
+      <a class="btn secondary"
+         href="index.html#projects">
+        Explore more projects
+      </a>
+
+      <a class="btn secondary"
+         href="mailto:jasmanik.t.l.96@gmail.com">
+        Contact me
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer container">
+  <span>
+    © <span id="year"></span> Jasmanik Torres López
+  </span>
+  <span>Data Analytics · Robotics &amp; AI</span>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
